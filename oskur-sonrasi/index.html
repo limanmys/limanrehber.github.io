@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>About - Liman Rehber</title>
+  <title>İşletim Sistemi Kurulum Sonrası Ayarlar - Liman Rehber</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "About";
-    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_name = "\u0130\u015fletim Sistemi Kurulum Sonras\u0131 Ayarlar";
+    var mkdocs_page_input_path = "oskur-sonrasi.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -65,9 +65,27 @@
                     
     <a class="" href="../oskur.kurulum.md">İşletim Sistemi Kurulumları</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../oskur-sonrasi/">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
+    <a class="current" href="./">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#kurulum-sonras-ayarlar">Kurulum Sonrası Ayarlar</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#1-sistemin-guncelliginin-kontrol-edilmesi">1. Sistemin güncelliğinin kontrol edilmesi</a></li>
+        
+            <li><a class="toctree-l4" href="#2-statik-ip-ayarlanmas">2. Statik IP ayarlanması</a></li>
+        
+            <li><a class="toctree-l4" href="#21-pardus-sunucu-uzerinde-statik-ip-verme">2.1. Pardus Sunucu üzerinde statik IP verme</a></li>
+        
+            <li><a class="toctree-l4" href="#22-ubuntu-sunucu-uzerinde-statik-ip-verme">2.2. Ubuntu Sunucu üzerinde statik IP verme</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -156,8 +174,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>İşletim Sistemi Kurulumu &raquo;</li>
+        
+      
     
-    <li>About</li>
+    <li>İşletim Sistemi Kurulum Sonrası Ayarlar</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -167,11 +189,76 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="kurulum-sonras-ayarlar">Kurulum Sonrası Ayarlar</h1>
+<p>İşletim sistemini kurduktan sonra en önemli ayarlardan birisi sistemin güncel olup olmamasıdır. Bu hem güvenlik nedeni ile hem de güncel sistem araçlarının kullanılması ihtiyaçları nedeniyle önemli bir davranıştır. </p>
+<h2 id="1-sistemin-guncelliginin-kontrol-edilmesi">1. Sistemin güncelliğinin kontrol edilmesi</h2>
+<p>Sistemin güncelliğini kontrol edilmesi için Debian tabanlı tüm sistemlerde aşağıdaki komut uygulanır.</p>
+<pre><code class="text">sudo apt update
+</code></pre>
+
+<p>Bu komut ile birlikte sisteminizde güncellenme ihtiyacı bulunan paket olup olmadığı gösterilmektedir. Fakat herhangi bir güncelleme işlemi yapmaz. İlgili paketleri güncellemek istediğinizde ise aşağıdaki komut uygulanır.</p>
+<pre><code class="text">sudo apt upgrade
+</code></pre>
+
+<p>Bu işlem tamamlandığında herhangi bir problem yoksa sisteminiz güncellenmiş olacaktır.</p>
+<h2 id="2-statik-ip-ayarlanmas">2. Statik IP ayarlanması</h2>
+<p>Pardus ve Ubuntu kurulumunda eğer Elle IP ayarı girmediyseniz varsayılan olarak sisteminizde DHCP varsa, ilgili sunucu tarafından size bir IP atanacaktır. Fakat bu IP adresi belirli kurallarla belirli zaman sonra değişebilir. Bu nedenle bunu sabit hale getirmek için sistem üzerinden sabit IP tanımlamanız gerekmektedir.</p>
+<h2 id="21-pardus-sunucu-uzerinde-statik-ip-verme">2.1. Pardus Sunucu üzerinde statik IP verme</h2>
+<p>Hem Pardus 17.x hem de Pardus 19.x sürümlerinde statik IP verme süreci aynıdır. Bu nedenle <strong>/etc/network/interfaces</strong> dosyası içerisine girilir. Bu dosya içerisinde aşağıdaki gibi bir satır bulunması gerekir. </p>
+<pre><code class="text">iface eth0 inet dhcp 
+</code></pre>
+
+<p>Bu ve benzeri yapıda anlatılan şey <strong>eth0</strong> ağ arabiriminde <strong>DHCP</strong> ile otomatik IP alınmasıdır. Dolayısıyla bu dosyadaki tek satırı yönetici yetkili bir hesap ile vim veya nano gibi bir araç ile açıp, aşağıdaki gibi değiştirmeniz gerekmektedir:</p>
+<pre><code class="text">iface eth0 inet static
+      address 192.168.1.67
+      netmask 255.255.255.0
+      gateway 192.168.1.1
+</code></pre>
+
+<p>Bu kod dizisindeki IP adresi olarak belirtilen 192.168.1.67 IP'si yerine sizin daha önce aldığınız ip adresini yazabilirsiniz. Bunun için dosyayı düzenlemeye başlamadan "ip a" komutu ile DHCP'nin size verdiği IP adresini öğrenip onu yazabilirsiniz. Gateway ve DNS adresleri eklenmesi gerekiyorsa bu konuda daha detaylı içeriği internetteki detaylı kaynaklardan bulabilirsiniz.</p>
+<h2 id="22-ubuntu-sunucu-uzerinde-statik-ip-verme">2.2. Ubuntu Sunucu üzerinde statik IP verme</h2>
+<p>Ubuntu, 18.04 sürümünden sonra klasik ağ yapısı yerine netplan sistemine geçmiştir. İlk olarak ağ arabirimi ve mevcut IP'nin belirlenmesi için "ip a" komutunu uygulayarak eth0 veya ens0s3 gibi değer belirlenir.</p>
+<p>Bu adımdan sonra  <strong>/etc/netplan/01-netcfg.yaml</strong> dosyası içerisine girilir. Bu dosya içerisinde aşağıdaki gibi bir görüntü bulunmaktadır:</p>
+<pre><code class="text">network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens0s3:
+      dhcp4: yes
+</code></pre>
+
+<p>Bu içerik, aşağıdaki gibi bir hale getirilir:</p>
+<pre><code class="text">network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens0s3:
+      dhcp4: no
+      addresses:
+        - 192.168.1.67/24
+      gateway4: 192.168.1.1
+      nameservers:
+          addresses: [8.8.8.8]
+</code></pre>
+
+<p>Yaml dosyası olduğu için boşluklar önemlidir. Ve bu düzenleme yapıldıktan sonra aşağıdaki komut ile netplan uygulanmış olur:</p>
+<pre><code class="text">sudo netplan apply
+</code></pre>
+
+<p>Böylelikle IP adresi alınmış olur. Daha detaylı bilgi için internette çok daha detaylı bilgilere erişebilirsiniz.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../liman-kurulum/" class="btn btn-neutral float-right" title="Liman Kurulum Yöntemleri">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../oskurgir/" class="btn btn-neutral" title="İşletim Sistemi Kurulumuna giriş"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -195,6 +282,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../oskurgir/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../liman-kurulum/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
