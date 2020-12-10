@@ -220,6 +220,11 @@ sudo apt update
 sudo apt install php-sqlite3 php-curl
 </code></pre>
 
+<pre><code class="text">sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt update
+</code></pre>
+
 <h2 id="12-deb-paketini-sunucuya-gonderme">1.2. DEB paketini sunucuya gönderme</h2>
 <h3 id="12a-gnulinux-sistemden-gonderme">1.2.a. GNU/Linux sistemden gönderme:</h3>
 <p>Kendi bilgisayarınız GNU/Linux temelli bir bilgisayar ise temin ettiğiniz deb paketini karşı sunucu üzerine aşağıdaki komut ile SSH protokolünü kullanarak gönderebilirsiniz:</p>
