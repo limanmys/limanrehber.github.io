@@ -73,7 +73,7 @@
                     <li class="toctree-l1"><a class="" href="../liman-eklentikurulumu.md">Liman'a eklenti kurulumu ve güncellemesi</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Liman üzerinde Sunucu Yönetimi</span></p>
+                <p class="caption"><span class="caption-text">Liman-Sunucu Yönetimi</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuekle/">Sunucu ekleme ve kaldırma</a>
                     </li>
@@ -84,14 +84,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuyonetim/">Sunucu Yönetimi</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Liman üzerinde Kullanıcı Yetki Yönetimi</span></p>
+                <p class="caption"><span class="caption-text">Liman-Kullanıcı Yetki Yönetimi</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="" href="../liman-kullanici-ayar.md">Liman Kullanıcı Ayarları</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-kullanici-ayar/">Liman Kullanıcı Ayarları</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Domain Eklentisi</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="" href="../domain-genel.md">Domain Eklentisi Genel</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-genel/">Domain Eklentisi Genel</a>
                     </li>
                     <li class="toctree-l1"><a class="" href="../domain-samba.md">Sunucular-SAMBA DC</a>
                     </li>
@@ -136,7 +136,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="kuruluma-giris">Kuruluma Giriş</h1>
+                <h2 id="kuruluma-giris">Kuruluma Giriş</h2>
 <p>Liman MYS Debian tabanlı sistemlerde sorunsuz şekilde kurulabilmektedir. Bunun için mevcut durumda test edilen aşağıdaki sistemlerde kurulabilmektedir. Kurumsal olarak kullanımda Masaüstü ortamı olmayan Debian tabanlı herhangi bir sistemde kurulması önerilmektedir.</p>
 <ul>
 <li><strong>Test edilmiş İşletim Sistemleri:</strong></li>
@@ -165,14 +165,14 @@
 <li>1 x Ağ adaptörü</li>
 </ul>
 <p>Kurumsal kullanım için HAVELSAN ve yetkili ekosistem firmaları ile iletişim kurulması önerilmektedir.</p>
-<h1 id="1-usb-ile-baslatma">1. USB ile Başlatma</h1>
-<h2 id="1a-usb-ile-baslatma-fiziksel-cihazda-usb-ile-baslatma">1.a. USB ile Başlatma - Fiziksel cihazda USB ile başlatma</h2>
+<h2 id="1-usb-ile-baslatma">1. USB ile Başlatma</h2>
+<h3 id="1a-usb-ile-baslatma-fiziksel-cihazda-usb-ile-baslatma">1.a. USB ile Başlatma - Fiziksel cihazda USB ile başlatma</h3>
 <p>Fiziksel cihazları USB ile başlatabilmek teknik olarak bilgi güvenliği açısından sakıncalı bir olaydır. Bu nedenle genellikle "boot order" olarak belirlenen veya "BIOS Ayarları" gibi kısımlar kurumsal ortamlara parolalı olarak giriş yapılabilmektedir.</p>
 <p>BIOS üzerinde parola yoksa veya parolayı biliyorsanız fiziksel cihazınız açılırken BIOS'unuzun özelliğine göre bir klavye tuşuyla "boot menu"'ye giriş yapılabilmektedir. Bu tuş genellikle F8 ile F12 arasındaki tuşlardan birisi olarak belirlenmektedir.</p>
 <p>İşletim sistemi kurulması için internetten Boot olabilir ISO dosyasını indirip USB belleğe yazdırmanız gerekmektedir. Daha sonra cihazınızın USB portuna bu belleği taktıktan sonra bilgisayarı açmaya başladığınızda BIOS ekranı belirdiğinde boot menü tuşuna bastığınızda aşağıdaki gibi görsel çıkacaktır.</p>
 <p><img alt="" src="../gorseller/bootmenu.png" /></p>
 <p>Boot menu üzerinde USB Devices, Removable Devices gibi ifadeler başta olmadığı durumda klavyeden yön tuşları ile bu seçeneği seçip &lt;ENTER&gt; tuşuna basarak bilgisayarınızı USB Bellek üzerinden başlatabilirsiniz. Bu adımda USB Bellekte bir problem bulunmadığı durumda kurmak istediğiniz işletim sisteminin boot ekranı açılmaya başlayacaktır.</p>
-<h2 id="1b-sanal-cihazda-usb-ile-baslatma">1.b. Sanal cihazda USB ile başlatma</h2>
+<h3 id="1b-sanal-cihazda-usb-ile-baslatma">1.b. Sanal cihazda USB ile başlatma</h3>
 <p>Sanallaştırma ortamlarında USB ile başlatmak için BIOS yerine sanallaştırma depolama ortamında ilgili ISO'nun bulunması yeterlidir. Bunun için farklı sanallaştırma ortamları için farklı senaryolar gerçekleşebilmektedir.</p>
 <p>VirtualBox'un kurulu olduğu sistemde ilgili ISO dosyası olması durumunda aşağıdaki bağlantıda anlatıldığı gibi kurulum yapabilirsiniz:</p>
 <p>Proxmox üzerinde web arayüzünden ISO dosyasını Depolama alanına yüklenmesi gerekmektedir. Bu işlem yapıldıktan sonra aşağıdaki bağlantıda anlatıldığı gibi kurulum yapabilirsiniz:</p>

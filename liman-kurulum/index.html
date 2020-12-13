@@ -64,6 +64,38 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Liman Kurulum Yöntemleri</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-paket-ile-kurulum">1. Paket ile Kurulum</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11-kurulum-oncesi-admlar">1.1. Kurulum Öncesi Adımlar</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#11a-ubuntu-1804">1.1.a. Ubuntu 18.04</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12-deb-paketini-sunucuya-gonderme">1.2. DEB paketini sunucuya gönderme</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#12a-gnulinux-sistemden-gonderme">1.2.a. GNU/Linux sistemden gönderme:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#12b-windows-sistemden-gonderme">1.2.b. Windows sistemden gönderme:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#13-deb-paketini-kurma">1.3. DEB paketini kurma</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#14-yonetici-kullancs-olusturmak">1.4. Yönetici kullanıcısı oluşturmak</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-depo-uzerinden-kurulum">2. Depo üzerinden kurulum</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-aciklab-deposunu-eklemek">2.1. Aciklab deposunu eklemek</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-guncel-liman-depo-uzerinden-yuklemek">2.2. Güncel Liman'ı depo üzerinden yüklemek</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-yonetici-kullancs-olusturmak">2.3. Yönetici kullanıcısı oluşturmak</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-guncelle/">Liman Güncelleme</a>
@@ -73,7 +105,7 @@
                     <li class="toctree-l1"><a class="" href="../liman-eklentikurulumu.md">Liman'a eklenti kurulumu ve güncellemesi</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Liman üzerinde Sunucu Yönetimi</span></p>
+                <p class="caption"><span class="caption-text">Liman-Sunucu Yönetimi</span></p>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuekle/">Sunucu ekleme ve kaldırma</a>
                     </li>
@@ -84,14 +116,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuyonetim/">Sunucu Yönetimi</a>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">Liman üzerinde Kullanıcı Yetki Yönetimi</span></p>
+                <p class="caption"><span class="caption-text">Liman-Kullanıcı Yetki Yönetimi</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="" href="../liman-kullanici-ayar.md">Liman Kullanıcı Ayarları</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-kullanici-ayar/">Liman Kullanıcı Ayarları</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Domain Eklentisi</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="" href="../domain-genel.md">Domain Eklentisi Genel</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-genel/">Domain Eklentisi Genel</a>
                     </li>
                     <li class="toctree-l1"><a class="" href="../domain-samba.md">Sunucular-SAMBA DC</a>
                     </li>
@@ -139,27 +171,27 @@
                 <h1 id="liman-kurulum-yontemleri">Liman Kurulum Yöntemleri</h1>
 <p>Liman MYS, her sürüm güncellemesinde otomatik olarak DEB paketi oluşturmaktadır. Doğası gereği DEB paketi farklı paketlere bağımlılık duymaktadır. Bu bağımlılıklara ulaşılabildiği sürece Liman MYS için DEB paketi, rahatlıkla kurulabilmektedir.</p>
 <p>Mevcut durumda Liman MYS'nin güncel sürümünü barındıran Debian tabanlı sistemlerde kullanılacak şekilde AcikLab deposu bulunmaktadır. İlerleyen süreçte Market üzerinden de hem Liman MYS'nin kurulumu hem de eklenti ve modüllerinin kurulması sağlanacaktır.</p>
-<h1 id="1-paket-ile-kurulum">1. Paket ile Kurulum</h1>
+<h2 id="1-paket-ile-kurulum">1. Paket ile Kurulum</h2>
 <p>Elinizde bulunan "<strong>liman-1.0-lastest.deb</strong>" veya tam sürümün yer aldığı deb paketini daha önce kurmuş olduğunuz işletim sistemi üzerine göndermeniz gerekmektedir. </p>
-<h2 id="11-kurulum-oncesi-admlar">1.1. Kurulum Öncesi Adımlar</h2>
+<h3 id="11-kurulum-oncesi-admlar">1.1. Kurulum Öncesi Adımlar</h3>
 <p>Liman MYS geliştirilmesi itibari ile Pardus işletim sistemi üzerinde kullanılmaya yönelik paketlenmiştir. Fakat Debian tabanlı sistemlerde çalıştırılmasının önünde hiçbir engel yoktur. Fakat bağımlılıklarından dolayı özellikle PHP 7.3 sürümünün bulunmasını beklemektedir.</p>
 <p>Bazı dağıtımların resmi sitesinde PHP 7.3 paketleri bulunmamaktadır. Bu nedenle kurulum öncesinde php depolarını sisteme eklemek gerekmektedir. Php deposu eklenmesi gereken ve ekleme adımları aşağıda belirtilmiştir.</p>
-<h3 id="11a-ubuntu-1804">1.1.a. Ubuntu 18.04</h3>
+<h4 id="11a-ubuntu-1804">1.1.a. Ubuntu 18.04</h4>
 <pre><code class="language-text">sudo apt install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php-sqlite3 php-curl
 </code></pre>
-<h2 id="12-deb-paketini-sunucuya-gonderme">1.2. DEB paketini sunucuya gönderme</h2>
-<h3 id="12a-gnulinux-sistemden-gonderme">1.2.a. GNU/Linux sistemden gönderme:</h3>
+<h3 id="12-deb-paketini-sunucuya-gonderme">1.2. DEB paketini sunucuya gönderme</h3>
+<h4 id="12a-gnulinux-sistemden-gonderme">1.2.a. GNU/Linux sistemden gönderme:</h4>
 <p>Kendi bilgisayarınız GNU/Linux temelli bir bilgisayar ise temin ettiğiniz deb paketini karşı sunucu üzerine aşağıdaki komut ile SSH protokolünü kullanarak gönderebilirsiniz:</p>
 <pre><code class="language-text">scp liman-1.0-lastest.deb sysadmin@sunucuipadresi:~/.
 </code></pre>
 <p>Bu komut kullanılırken "sysadmin" yerine sunucuya erişim sağladığınız kullanıcı adını, sunucuipadresi yerine ise kurduğunuz sunucunun IP Adresi veya DNS kaydı eklediyseniz DNS adresini yazmanız gerekmektedir. </p>
 <p>Bu komutun çalışabilmesi için sunucunuzda openssh-server paketinin kurulu olması gerekmektedir ve varsayılanda bulunan güvenlik izinlerinin açık olması gerekmektedir.</p>
-<h3 id="12b-windows-sistemden-gonderme">1.2.b. Windows sistemden gönderme:</h3>
+<h4 id="12b-windows-sistemden-gonderme">1.2.b. Windows sistemden gönderme:</h4>
 <p>Henüz uygulanmadı. Özet olarak Winscp uygulaması ile gönderilebilmektedir.</p>
-<h2 id="13-deb-paketini-kurma">1.3. DEB paketini kurma</h2>
+<h3 id="13-deb-paketini-kurma">1.3. DEB paketini kurma</h3>
 <p>DEB paketini gönderdikten sonra işletim sistemi bağımsız olarak uzaktan sunucuya erişmeniz gerekmektedir. Bunun için GNU/Linux üzerinden "SSH İstemcisi" ile bağlantı kurulabileceği gibi Windows üzerinden "Putty" ile giriş yapabilirsiniz. </p>
 <p>Aşağıdaki komut ile SSH protokolü kullanarak giriş yapılır:</p>
 <pre><code class="language-text">ssh sysadmin@sunucuipadresi
@@ -168,34 +200,34 @@ sudo apt install php-sqlite3 php-curl
 <pre><code class="language-text">sudo apt install -y ./liman-1.0-lastest.deb
 </code></pre>
 <p>Bu kısım biraz uzun sürebilmektedir. Fakat bu adımdan sonra "Kurulum Başarıyla Tamamlandı" yazısını gördüğünüzde, kurulum işlemi tamamlanmış olacaktır.</p>
-<h2 id="14-yonetici-kullancs-olusturmak">1.4. Yönetici kullanıcısı oluşturmak</h2>
+<h3 id="14-yonetici-kullancs-olusturmak">1.4. Yönetici kullanıcısı oluşturmak</h3>
 <p>Kurulum sonrasında ilk yapılması gereken Yönetici parolası oluşturmak. Bunun için aşağıdaki komutlar ile sudo yetkili kullanıcıda iken liman kullanıcısına giriş yapılır ve yönetici hesabı oluşturulur:</p>
 <pre><code class="language-text">sudo su liman
 sudo php /liman/server/artisan administrator    
 </code></pre>
 <p>Bu adım sonunda karşınıza liman web arayüzünden giriş yapacağınız kullanıcı adı ve parolanız çıkacaktır. Liman'ı kurduğunuz sunucunun ip adresini web tarayıcınız üzerine yazıp bu bilgiler ile giriş yaparsanız Liman'ın Web arayüzüne giriş yapmış olacaksınız.</p>
-<p><img alt="" src="../../.gitbook/assets/screenshot-from-2020-06-14-18-58-36.png" /></p>
-<h1 id="2-depo-uzerinden-kurulum">2. Depo üzerinden kurulum</h1>
+<p><img alt="" src="../gorseller/limankurulumson.png" /></p>
+<h2 id="2-depo-uzerinden-kurulum">2. Depo üzerinden kurulum</h2>
 <p>Liman'ı en verimli şekilde kurmanın yöntemi depo üzerinden kurulumdur. Bunun için aşağıdaki adımları uygulamak gerekmektedir.</p>
-<h2 id="21-aciklab-deposunu-eklemek">2.1. Aciklab deposunu eklemek</h2>
+<h3 id="21-aciklab-deposunu-eklemek">2.1. Aciklab deposunu eklemek</h3>
 <p>Depo üzerinden Liman MYS kurmak için öncelikle Liman'ın bulunduğu AcikLab deposunu sisteminize eklemeniz gerekmektedir. Öncelikle aşağıdaki komut ile depo adresini paket kaynak listenize eklemelisiniz:</p>
 <pre><code class="language-text">echo &quot;deb [arch=amd64] http://depo.aciklab.org/ onyedi main&quot; | sudo tee /etc/apt/sources.list.d/acikdepo.list
 </code></pre>
 <p>Depoyu ekledikten sonra kullanabilmek için AcikLab deposu için public.key'i sisteminize güvenilir şekilde eklemeniz gerekmektedir. Aşağıdaki komut ile açık anahtarı sisteminize ekleyebilirsiniz:</p>
 <pre><code class="language-text">sudo wget -qO - http://depo.aciklab.org/public.key | sudo apt-key add -
 </code></pre>
-<h2 id="22-guncel-liman-depo-uzerinden-yuklemek">2.2. Güncel Liman'ı depo üzerinden yüklemek</h2>
+<h3 id="22-guncel-liman-depo-uzerinden-yuklemek">2.2. Güncel Liman'ı depo üzerinden yüklemek</h3>
 <p>Bu adımdan sonra sisteminizi güncelledikten sonra liman MYS'yi yükleyebilirsiniz:</p>
 <pre><code class="language-text">sudo apt update
 sudo apt install liman
 </code></pre>
-<h2 id="23-yonetici-kullancs-olusturmak">2.3. Yönetici kullanıcısı oluşturmak</h2>
+<h3 id="23-yonetici-kullancs-olusturmak">2.3. Yönetici kullanıcısı oluşturmak</h3>
 <p>Kurulum sonrasında ilk yapılması gereken Yönetici parolası oluşturmak. Bunun için aşağıdaki komutlar ile sudo yetkili kullanıcıda iken liman kullanıcısına giriş yapılır ve yönetici hesabı oluşturulur:</p>
 <pre><code class="language-text">sudo su liman
 sudo php /liman/server/artisan administrator    
 </code></pre>
 <p>Bu adım sonunda karşınıza liman web arayüzünden giriş yapacağınız kullanıcı adı ve parolanız çıkacaktır. Liman'ı kurduğunuz sunucunun ip adresini web tarayıcınız üzerine yazıp bu bilgiler ile giriş yaparsanız Liman'ın Web arayüzüne giriş yapmış olacaksınız.</p>
-<p><img alt="" src="../../.gitbook/assets/screenshot-from-2020-06-14-18-58-36%20%281%29.png" /></p>
+<p><img alt="" src="../gorseller/limankurulumson.png" /></p>
               
             </div>
           </div>

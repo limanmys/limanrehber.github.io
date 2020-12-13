@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Sunucu ayarlarının düzenlenmesi - Liman Rehber</title>
+  <title>Liman Kullanıcı Ayarları - Liman Rehber</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Sunucu ayarlar\u0131n\u0131n d\u00fczenlenmesi";
-    var mkdocs_page_input_path = "liman-sunucuduzenle.md";
+    var mkdocs_page_name = "Liman Kullan\u0131c\u0131 Ayarlar\u0131";
+    var mkdocs_page_input_path = "liman-kullanici-ayar.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -72,16 +72,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Liman-Sunucu Yönetimi</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuekle/">Sunucu ekleme ve kaldırma</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Sunucu ayarlarının düzenlenmesi</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#sunucu-genel-bilgilerinin-duzenlenmesi">Sunucu Genel Bilgilerinin düzenlenmesi</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sunucu-guvenlik-verilerinin-duzenlenmesi">Sunucu güvenlik verilerinin düzenlenmesi</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuduzenle/">Sunucu ayarlarının düzenlenmesi</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucueklenti/">Sunucu'da eklenti kullanılması</a>
                     </li>
@@ -89,8 +83,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Liman-Kullanıcı Yetki Yönetimi</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../liman-kullanici-ayar/">Liman Kullanıcı Ayarları</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Liman Kullanıcı Ayarları</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Domain Eklentisi</span></p>
@@ -125,11 +121,11 @@
     
       
         
-          <li>Liman-Sunucu Yönetimi &raquo;</li>
+          <li>Liman-Kullanıcı Yetki Yönetimi &raquo;</li>
         
       
     
-    <li>Sunucu ayarlarının düzenlenmesi</li>
+    <li>Liman Kullanıcı Ayarları</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -140,14 +136,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sunucu-ayarlarnn-duzenlenmesi">Sunucu Ayarlarının Düzenlenmesi</h1>
-<p>Ekli olan bir sunucunun ayarlarının düzenlemesi için farklı yapılar bulunmaktadır.</p>
-<h2 id="sunucu-genel-bilgilerinin-duzenlenmesi">Sunucu Genel Bilgilerinin düzenlenmesi</h2>
-<p>Sunucular sayfasında Sunucu'ya sağ tıklayıp düzenle denildiğinde "Sunucu Adı", "Kontrol Portu", "IP adresi" ve "Şehir" bilgileri düzenlenebilmektedir.</p>
-<p><img alt="" src="../gorseller/sunucuduzenle1.png" /></p>
-<h2 id="sunucu-guvenlik-verilerinin-duzenlenmesi">Sunucu güvenlik verilerinin düzenlenmesi</h2>
-<p>Sunucu ile ilgili güvenlik verileri "Kasa" ayarları kısmında tutulmaktadır. Kullanıcı adınız ve parolanız bu kısımda tutulmaktadır. Güvenlik nedeniyle düzenlenme izin verilmemektedir fakat "yeni" bir değer ile güncellenebilmektedir. Bunun için Anahtar bilgilerine sağ tıklayarak "Güncelle" demeniz ve yeni değeri girmeniz yeterlidir.</p>
-<p><img alt="" src="../gorseller/sunucuduzenle2.png" /></p>
+                <h1 id="liman-yetki-yonetimi">Liman Yetki Yönetimi</h1>
+<p>Liman MYS üzerinde kullanıcıları ve kullanıcıların rol gruplarına çeşitli yetkiler verebilirsiniz. Bu yetkiler ile kullanıcılar sunucuları ve istemcileri kısıtlı ve güvenli şekilde yönetebilmektedir.</p>
+<p>Yetkileri sistem yöneticisi olan kullanıcılara vermek, daha sonra yönetici olarak Liman'ın yöneticisini zorlayacaktır. Bu nedenle olabildiğince <strong>Rol Grupları</strong> üzerinden yetkiler verilmesi gerekmektedir. Bu nedenle aşağıdaki gibi farklı yetkiler için farklı grupları belirlemeniz <em>verimli</em> ve <em>güvenli</em> olacaktır. </p>
+<p>Örnek olarak bir kullanıcının sadece okuma yapmasını istiyorsanız, Liman MYS üzerinde sadece okuma işlemlerini yapacağı fonksiyonlara izin verip, düzenleme yetkisini farklı bir rol grubuna verebilirsiniz.</p>
+<p><img alt="" src="../gorseller/limanyetki1.png" /></p>
+<p>Daha sonra Rol grupları içerisine farklı kullanıcıları ekleyip çıkartabilirsiniz. Bu sayede daha düzenli bir yönetim sağlanabilmektedir.</p>
+<p><img alt="" src="../gorseller/limanyetki2.png" /></p>
               
             </div>
           </div>
@@ -155,10 +150,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../liman-sunucueklenti/" class="btn btn-neutral float-right" title="Sunucu'da eklenti kullanılması">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../domain-genel/" class="btn btn-neutral float-right" title="Domain Eklentisi Genel">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../liman-sunucuekle/" class="btn btn-neutral" title="Sunucu ekleme ve kaldırma"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../liman-sunucuyonetim/" class="btn btn-neutral" title="Sunucu Yönetimi"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -184,10 +179,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../liman-sunucuekle/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../liman-sunucuyonetim/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../liman-sunucueklenti/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../domain-genel/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
