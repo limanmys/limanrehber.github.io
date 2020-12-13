@@ -55,9 +55,33 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">İşletim Sistemi Kurulumuna giriş</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#kuruluma-giris">Kuruluma Giriş</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-usb-ile-baslatma">1. USB ile Başlatma</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#11-iso-kalb-indirme">1.1. ISO Kalıbı İndirme</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#11a-pardus-iso-kalbn-indirme">1.1.a. Pardus ISO kalıbını indirme</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#11b-ubuntu-iso-kalbn-indirme">1.1.b. Ubuntu ISO kalıbını indirme</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12a-windows-uzerinde-iso-kalb-yazdrma">1.2.a. Windows üzerinde ISO Kalıbı yazdırma</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-fiziksel-cihazda-usb-ile-baslatma">2. Fiziksel cihazda USB ile başlatma</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-sanal-cihazda-usb-ile-baslatma">3. Sanal cihazda USB ile başlatma</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-proxmox-uzerinde-usb-baslatma">3.1. Proxmox üzerinde USB başlatma</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../oskur.kurulum.md">İşletim Sistemi Kurulumları</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../oskur-kurulum/">İşletim Sistemi Kurulumları</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../oskur-sonrasi/">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
                     </li>
@@ -136,7 +160,8 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="kuruluma-giris">Kuruluma Giriş</h2>
+                <h1 id="isletim-sistemi-kurulumlarna-giris">İşletim Sistemi kurulumlarına giriş</h1>
+<h2 id="kuruluma-giris">Kuruluma Giriş</h2>
 <p>Liman MYS Debian tabanlı sistemlerde sorunsuz şekilde kurulabilmektedir. Bunun için mevcut durumda test edilen aşağıdaki sistemlerde kurulabilmektedir. Kurumsal olarak kullanımda Masaüstü ortamı olmayan Debian tabanlı herhangi bir sistemde kurulması önerilmektedir.</p>
 <ul>
 <li><strong>Test edilmiş İşletim Sistemleri:</strong></li>
@@ -166,16 +191,51 @@
 </ul>
 <p>Kurumsal kullanım için HAVELSAN ve yetkili ekosistem firmaları ile iletişim kurulması önerilmektedir.</p>
 <h2 id="1-usb-ile-baslatma">1. USB ile Başlatma</h2>
-<h3 id="1a-usb-ile-baslatma-fiziksel-cihazda-usb-ile-baslatma">1.a. USB ile Başlatma - Fiziksel cihazda USB ile başlatma</h3>
+<p>USB ile İşletim Sistemi kurabilmek için kurulum ISO disk imajına ve Disk Kalıbı Yazıcı uygulamaya ihtiyaç vardır.</p>
+<h3 id="11-iso-kalb-indirme">1.1. ISO Kalıbı İndirme</h3>
+<p>ISO kalıbı olarak hangi işletim sistemi üzerine kurulum yapacaksanız ilgili ISO kalıbı indirilmesi gerekiyor. Bunun için Pardus ve Ubuntu alternatifleri burada anlatılacaktır.</p>
+<h4 id="11a-pardus-iso-kalbn-indirme">1.1.a. Pardus ISO kalıbını indirme</h4>
+<p>Aşağıdaki adreste bulunan sürümlerden güncel olan <strong>Pardus 19.x Sunucu (64-bit)</strong> sürümü bilgisayarınıza indirilir.</p>
+<h4 id="11b-ubuntu-iso-kalbn-indirme">1.1.b. Ubuntu ISO kalıbını indirme</h4>
+<p>Aşağıdaki adreste bulunan sürümlerden güncel olan Ubuntu Sunucu sürümü bilgisayarınıza indirilir.</p>
+<h3 id="12a-windows-uzerinde-iso-kalb-yazdrma">1.2.a. Windows üzerinde ISO Kalıbı yazdırma</h3>
+<p>Pardus Disk Kalıbı Yazıcı programını <a href="http://indir.pardus.org.tr/PARDUS/piw.zip">buradan</a> tıklayarak indirin. İndirdiğiniz ZIP dosyasının içeriğini çıkartın ve <strong>piw.exe</strong> yi yönetici olarak onaylayarak çalıştırın.</p>
+<p>-1. USB cihazınızla önyükleme yapmak istediğiniz herhangi bir Linux disk kalıbı dosyasını (+) düğmesine tıklayarak seçiniz. Seçiminizi yaptıktan sonra ileri düğmesine tıklayarak veya sola kaydırma hareketi ile bir sonraki adıma geçiniz.</p>
+<p><img alt="" src="../gorseller/disk1.png" /></p>
+<p>-2. Bilgisayarınıza takılı olan (Program otomatik tespit ederek listeler) cihazlardan istediğinizi hedef olarak seçiniz. Seçiminizi yaptıktan sonra ileri düğmesine tıklayarak veya sola kaydırma hareketi ile bir sonraki adıma geçiniz.</p>
+<p><img alt="" src="../gorseller/disk2.png" /></p>
+<p>-1. Listelenen disk kalıbı ve hedef cihaz teyit ettikten sonra "BAŞLAT" düğmesine basınız. Yazma işleminin başlaması için gelen uyarıyı "EVET" diyerek onaylayınız.
+-2. Yazma işlemi başladıktan sonra dilerseniz iptal edip disk kalıbınızı veya hedef cihazınızı değiştirerek tekrar başlatabilirsiniz.
+-3. Yazma işlemi bittikten sonra "Yazma işlemi Tamamlandı !" yazısı ile birlikte, önyüklenebilir Linux USB ortamınız artık hazır, çıkartıp kullanabilirsiniz.</p>
+<p><img alt="" src="../gorseller/disk3.png" /></p>
+<p>Kaynak: <a href="https://www.pardus.org.tr/pardus-usb-olusturma/">https://www.pardus.org.tr/pardus-usb-olusturma/</a></p>
+<h2 id="2-fiziksel-cihazda-usb-ile-baslatma">2. Fiziksel cihazda USB ile başlatma</h2>
 <p>Fiziksel cihazları USB ile başlatabilmek teknik olarak bilgi güvenliği açısından sakıncalı bir olaydır. Bu nedenle genellikle "boot order" olarak belirlenen veya "BIOS Ayarları" gibi kısımlar kurumsal ortamlara parolalı olarak giriş yapılabilmektedir.</p>
 <p>BIOS üzerinde parola yoksa veya parolayı biliyorsanız fiziksel cihazınız açılırken BIOS'unuzun özelliğine göre bir klavye tuşuyla "boot menu"'ye giriş yapılabilmektedir. Bu tuş genellikle F8 ile F12 arasındaki tuşlardan birisi olarak belirlenmektedir.</p>
 <p>İşletim sistemi kurulması için internetten Boot olabilir ISO dosyasını indirip USB belleğe yazdırmanız gerekmektedir. Daha sonra cihazınızın USB portuna bu belleği taktıktan sonra bilgisayarı açmaya başladığınızda BIOS ekranı belirdiğinde boot menü tuşuna bastığınızda aşağıdaki gibi görsel çıkacaktır.</p>
 <p><img alt="" src="../gorseller/bootmenu.png" /></p>
 <p>Boot menu üzerinde USB Devices, Removable Devices gibi ifadeler başta olmadığı durumda klavyeden yön tuşları ile bu seçeneği seçip &lt;ENTER&gt; tuşuna basarak bilgisayarınızı USB Bellek üzerinden başlatabilirsiniz. Bu adımda USB Bellekte bir problem bulunmadığı durumda kurmak istediğiniz işletim sisteminin boot ekranı açılmaya başlayacaktır.</p>
-<h3 id="1b-sanal-cihazda-usb-ile-baslatma">1.b. Sanal cihazda USB ile başlatma</h3>
+<h2 id="3-sanal-cihazda-usb-ile-baslatma">3. Sanal cihazda USB ile başlatma</h2>
 <p>Sanallaştırma ortamlarında USB ile başlatmak için BIOS yerine sanallaştırma depolama ortamında ilgili ISO'nun bulunması yeterlidir. Bunun için farklı sanallaştırma ortamları için farklı senaryolar gerçekleşebilmektedir.</p>
 <p>VirtualBox'un kurulu olduğu sistemde ilgili ISO dosyası olması durumunda aşağıdaki bağlantıda anlatıldığı gibi kurulum yapabilirsiniz:</p>
 <p>Proxmox üzerinde web arayüzünden ISO dosyasını Depolama alanına yüklenmesi gerekmektedir. Bu işlem yapıldıktan sonra aşağıdaki bağlantıda anlatıldığı gibi kurulum yapabilirsiniz:</p>
+<h3 id="31-proxmox-uzerinde-usb-baslatma">3.1. Proxmox üzerinde USB başlatma</h3>
+<p>-1. Kurulu bir Proxmox ortamınız bulunmakta ise Depolama birimine ISO'yu yüklediyseniz, Proxmox arayüzünden "Create VM" butonuna tıklayarak yeni bir sanal makine oluşturmaya başlabilirsiniz. Anlaşılır bir isim vererek bir sonraki adıma geçebilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox1.png" /></p>
+<p>-2. OS (İşletim Sistemi) sekmesinde CD aygıtı olarak depolama alanına yüklediğiniz ISO'yu seçmeniz gerekmektedir.</p>
+<p><img alt="" src="../gorseller/proxmox2.png" /></p>
+<p>-3. Sistem sekmesinde herhangi bir değişiklik yapmadan ilerleyebilirsiniz. </p>
+<p>-4. Hard Disk sekmesinde ise hangi depolama alanına kurulum yapacaksanız o kısmı seçmeniz gerekmekte ve yaklaşık 50 GB'lık bir disk boyutu seçebilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox3.png" /></p>
+<p>-5. CPU sekmesinde 1 soket, 2 core seçerek ilerleyebilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox4.png" /></p>
+<p>-6. Hafıza sekmesinde 2048 MiB değeri seçip ilerleyebilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox5.png" /></p>
+<p>-7. Ağ sekmesinde de mevcut durumdaki ile aynı şekilde ilerleyebilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox6.png" /></p>
+<p>-8. Son olarak onaylama sekmesinde özet bilgileri inceleyerek alttaki "Start after created"'i işaretleyerek oluşumdan sonra açılmasını sağlayabilirsiniz.</p>
+<p><img alt="" src="../gorseller/proxmox7.png" /></p>
+<p>-9. Bu adımdan sonra Proxmox üzerinde VM listesinde Sanal Makina'nızın ayağa kalktığını görebilirsiniz.</p>
               
             </div>
           </div>
@@ -183,7 +243,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../oskur-sonrasi/" class="btn btn-neutral float-right" title="İşletim Sistemi Kurulum Sonrası Ayarlar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../oskur-kurulum/" class="btn btn-neutral float-right" title="İşletim Sistemi Kurulumları">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href=".." class="btn btn-neutral" title="Liman Rehber"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -215,7 +275,7 @@
         <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../oskur-sonrasi/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../oskur-kurulum/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

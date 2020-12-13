@@ -55,7 +55,7 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../oskurgir/">İşletim Sistemi Kurulumuna giriş</a>
                     </li>
-                    <li class="toctree-l1"><a class="" href="../oskur.kurulum.md">İşletim Sistemi Kurulumları</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../oskur-kurulum/">İşletim Sistemi Kurulumları</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../oskur-sonrasi/">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
                     </li>
@@ -177,15 +177,21 @@
 <p>Liman MYS geliştirilmesi itibari ile Pardus işletim sistemi üzerinde kullanılmaya yönelik paketlenmiştir. Fakat Debian tabanlı sistemlerde çalıştırılmasının önünde hiçbir engel yoktur. Fakat bağımlılıklarından dolayı özellikle PHP 7.3 sürümünün bulunmasını beklemektedir.</p>
 <p>Bazı dağıtımların resmi sitesinde PHP 7.3 paketleri bulunmamaktadır. Bu nedenle kurulum öncesinde php depolarını sisteme eklemek gerekmektedir. Php deposu eklenmesi gereken ve ekleme adımları aşağıda belirtilmiştir.</p>
 <h4 id="11a-ubuntu-1804">1.1.a. Ubuntu 18.04</h4>
-<pre><code class="language-text">sudo apt install software-properties-common
+<p>Ubuntu 18.04 resmi depolarında PHP 7.3 paketleri olmadığı için aşağıdaki depo eklenmesi gerekmektedir:</p>
+<pre><code class="language-bash">sudo apt install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php-sqlite3 php-curl
 </code></pre>
+<p>Ubuntu 18.04 resmi depolarında PostgreSQL güncel 13.x paketleri olmadığı için aşağıdaki depo eklenmesi gerekmektedir:</p>
+<pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt update
+</code></pre>
 <h3 id="12-deb-paketini-sunucuya-gonderme">1.2. DEB paketini sunucuya gönderme</h3>
 <h4 id="12a-gnulinux-sistemden-gonderme">1.2.a. GNU/Linux sistemden gönderme:</h4>
 <p>Kendi bilgisayarınız GNU/Linux temelli bir bilgisayar ise temin ettiğiniz deb paketini karşı sunucu üzerine aşağıdaki komut ile SSH protokolünü kullanarak gönderebilirsiniz:</p>
-<pre><code class="language-text">scp liman-1.0-lastest.deb sysadmin@sunucuipadresi:~/.
+<pre><code class="language-bash">scp liman-1.0-lastest.deb sysadmin@sunucuipadresi:~/.
 </code></pre>
 <p>Bu komut kullanılırken "sysadmin" yerine sunucuya erişim sağladığınız kullanıcı adını, sunucuipadresi yerine ise kurduğunuz sunucunun IP Adresi veya DNS kaydı eklediyseniz DNS adresini yazmanız gerekmektedir. </p>
 <p>Bu komutun çalışabilmesi için sunucunuzda openssh-server paketinin kurulu olması gerekmektedir ve varsayılanda bulunan güvenlik izinlerinin açık olması gerekmektedir.</p>
@@ -194,15 +200,15 @@ sudo apt install php-sqlite3 php-curl
 <h3 id="13-deb-paketini-kurma">1.3. DEB paketini kurma</h3>
 <p>DEB paketini gönderdikten sonra işletim sistemi bağımsız olarak uzaktan sunucuya erişmeniz gerekmektedir. Bunun için GNU/Linux üzerinden "SSH İstemcisi" ile bağlantı kurulabileceği gibi Windows üzerinden "Putty" ile giriş yapabilirsiniz. </p>
 <p>Aşağıdaki komut ile SSH protokolü kullanarak giriş yapılır:</p>
-<pre><code class="language-text">ssh sysadmin@sunucuipadresi
+<pre><code class="language-bash">ssh sysadmin@sunucuipadresi
 </code></pre>
 <p>Sunucuya giriş yaptıktan sonra yetkili kullanıcı yine aynı kullanıcı ise aşağıdaki komut ile kurulum başlatılır. Sunucunun yetkili kullanıcı olmasının dışında ilgili cihazın herhangi bir debian tabanlı depo sunucusuna erişebiliyor olması gerekmektedir. Depo sunucusuna erişim yoksa kurumsal destek alınması önerilmektedir.</p>
-<pre><code class="language-text">sudo apt install -y ./liman-1.0-lastest.deb
+<pre><code class="language-bash">sudo apt install -y ./liman-1.0-lastest.deb
 </code></pre>
 <p>Bu kısım biraz uzun sürebilmektedir. Fakat bu adımdan sonra "Kurulum Başarıyla Tamamlandı" yazısını gördüğünüzde, kurulum işlemi tamamlanmış olacaktır.</p>
 <h3 id="14-yonetici-kullancs-olusturmak">1.4. Yönetici kullanıcısı oluşturmak</h3>
 <p>Kurulum sonrasında ilk yapılması gereken Yönetici parolası oluşturmak. Bunun için aşağıdaki komutlar ile sudo yetkili kullanıcıda iken liman kullanıcısına giriş yapılır ve yönetici hesabı oluşturulur:</p>
-<pre><code class="language-text">sudo su liman
+<pre><code class="language-bash">sudo su liman
 sudo php /liman/server/artisan administrator    
 </code></pre>
 <p>Bu adım sonunda karşınıza liman web arayüzünden giriş yapacağınız kullanıcı adı ve parolanız çıkacaktır. Liman'ı kurduğunuz sunucunun ip adresini web tarayıcınız üzerine yazıp bu bilgiler ile giriş yaparsanız Liman'ın Web arayüzüne giriş yapmış olacaksınız.</p>
@@ -211,19 +217,19 @@ sudo php /liman/server/artisan administrator
 <p>Liman'ı en verimli şekilde kurmanın yöntemi depo üzerinden kurulumdur. Bunun için aşağıdaki adımları uygulamak gerekmektedir.</p>
 <h3 id="21-aciklab-deposunu-eklemek">2.1. Aciklab deposunu eklemek</h3>
 <p>Depo üzerinden Liman MYS kurmak için öncelikle Liman'ın bulunduğu AcikLab deposunu sisteminize eklemeniz gerekmektedir. Öncelikle aşağıdaki komut ile depo adresini paket kaynak listenize eklemelisiniz:</p>
-<pre><code class="language-text">echo &quot;deb [arch=amd64] http://depo.aciklab.org/ onyedi main&quot; | sudo tee /etc/apt/sources.list.d/acikdepo.list
+<pre><code class="language-bash">echo &quot;deb [arch=amd64] http://depo.aciklab.org/ onyedi main&quot; | sudo tee /etc/apt/sources.list.d/acikdepo.list
 </code></pre>
 <p>Depoyu ekledikten sonra kullanabilmek için AcikLab deposu için public.key'i sisteminize güvenilir şekilde eklemeniz gerekmektedir. Aşağıdaki komut ile açık anahtarı sisteminize ekleyebilirsiniz:</p>
-<pre><code class="language-text">sudo wget -qO - http://depo.aciklab.org/public.key | sudo apt-key add -
+<pre><code class="language-bash">sudo wget -qO - http://depo.aciklab.org/public.key | sudo apt-key add -
 </code></pre>
 <h3 id="22-guncel-liman-depo-uzerinden-yuklemek">2.2. Güncel Liman'ı depo üzerinden yüklemek</h3>
 <p>Bu adımdan sonra sisteminizi güncelledikten sonra liman MYS'yi yükleyebilirsiniz:</p>
-<pre><code class="language-text">sudo apt update
+<pre><code class="language-bash">sudo apt update
 sudo apt install liman
 </code></pre>
 <h3 id="23-yonetici-kullancs-olusturmak">2.3. Yönetici kullanıcısı oluşturmak</h3>
 <p>Kurulum sonrasında ilk yapılması gereken Yönetici parolası oluşturmak. Bunun için aşağıdaki komutlar ile sudo yetkili kullanıcıda iken liman kullanıcısına giriş yapılır ve yönetici hesabı oluşturulur:</p>
-<pre><code class="language-text">sudo su liman
+<pre><code class="language-bash">sudo su liman
 sudo php /liman/server/artisan administrator    
 </code></pre>
 <p>Bu adım sonunda karşınıza liman web arayüzünden giriş yapacağınız kullanıcı adı ve parolanız çıkacaktır. Liman'ı kurduğunuz sunucunun ip adresini web tarayıcınız üzerine yazıp bu bilgiler ile giriş yaparsanız Liman'ın Web arayüzüne giriş yapmış olacaksınız.</p>
