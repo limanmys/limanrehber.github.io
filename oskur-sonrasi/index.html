@@ -7,13 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>İşletim Sistemi Kurulum Sonrası Ayarlar - Liman Rehber</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
@@ -24,7 +25,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -35,6 +36,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> Liman Rehber</a>
         <div role="search">
@@ -45,117 +47,69 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">Liman Rehber</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">İşletim Sistemi Kurulumu</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../oskurgir/">İşletim Sistemi Kurulumuna giriş</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../oskur.kurulum.md">İşletim Sistemi Kurulumları</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#kurulum-sonras-ayarlar">Kurulum Sonrası Ayarlar</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#1-sistemin-guncelliginin-kontrol-edilmesi">1. Sistemin güncelliğinin kontrol edilmesi</a></li>
-        
-            <li><a class="toctree-l4" href="#2-statik-ip-ayarlanmas">2. Statik IP ayarlanması</a></li>
-        
-            <li><a class="toctree-l4" href="#21-pardus-sunucu-uzerinde-statik-ip-verme">2.1. Pardus Sunucu üzerinde statik IP verme</a></li>
-        
-            <li><a class="toctree-l4" href="#22-ubuntu-sunucu-uzerinde-statik-ip-verme">2.2. Ubuntu Sunucu üzerinde statik IP verme</a></li>
-        
-        </ul>
-    
-
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Liman Rehber</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">İşletim Sistemi Kurulumu</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../oskurgir/">İşletim Sistemi Kurulumuna giriş</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../oskur.kurulum.md">İşletim Sistemi Kurulumları</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">İşletim Sistemi Kurulum Sonrası Ayarlar</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-sistemin-guncelliginin-kontrol-edilmesi">1. Sistemin güncelliğinin kontrol edilmesi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-statik-ip-ayarlanmas">2. Statik IP ayarlanması</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#21-pardus-sunucu-uzerinde-statik-ip-verme">2.1. Pardus Sunucu üzerinde statik IP verme</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#22-ubuntu-sunucu-uzerinde-statik-ip-verme">2.2. Ubuntu Sunucu üzerinde statik IP verme</a>
+    </li>
     </ul>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Liman Kurulumu</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../liman-kurulum/">Liman Kurulum Yöntemleri</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-guncelle/">Liman Güncelleme</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-ayar.md">Liman Kurulum Sonrası ayarlar</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-eklentikurulumu.md">Liman'a eklenti kurulumu ve güncellemesi</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Liman üzerinde Sunucu Yönetimi</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../liman-sunucuekle.md">Sunucu ekleme ve kaldırma</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-sunucuduzenle.md">Sunucu ayarlarının düzenlenmesi</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-sunucueklenti.md">Sunucu'da eklenti kullanılması</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../liman-sunucu.md">Sunucu Yönetimi</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Liman üzerinde Kullanıcı Yönetimi</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <span class="caption-text">\ Liman Yetki Yönetimi</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../liman-kullanici-ayar.md">Liman Kullanıcı Ayarları</a>
-                </li>
-    </ul>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Liman Kurulumu</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-kurulum/">Liman Kurulum Yöntemleri</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-guncelle/">Liman Güncelleme</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../liman-ayar.md">Liman Kurulum Sonrası ayarlar</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../liman-eklentikurulumu.md">Liman'a eklenti kurulumu ve güncellemesi</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Liman üzerinde Sunucu Yönetimi</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuekle/">Sunucu ekleme ve kaldırma</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuduzenle/">Sunucu ayarlarının düzenlenmesi</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucueklenti/">Sunucu'da eklenti kullanılması</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuyonetim/">Sunucu Yönetimi</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Liman üzerinde Kullanıcı Yetki Yönetimi</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../liman-kullanici-ayar.md">Liman Kullanıcı Ayarları</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Domain Eklentisi</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="" href="../domain-genel.md">Domain Eklentisi Genel</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../domain-samba.md">Sunucular-SAMBA DC</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../domain-ad.md">Sunucular-AktifDizin</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../domain-eklentiarayuz.md">Domain Eklentisi Arayüzü</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -184,6 +138,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -193,42 +148,37 @@
 <p>İşletim sistemini kurduktan sonra en önemli ayarlardan birisi sistemin güncel olup olmamasıdır. Bu hem güvenlik nedeni ile hem de güncel sistem araçlarının kullanılması ihtiyaçları nedeniyle önemli bir davranıştır. </p>
 <h2 id="1-sistemin-guncelliginin-kontrol-edilmesi">1. Sistemin güncelliğinin kontrol edilmesi</h2>
 <p>Sistemin güncelliğini kontrol edilmesi için Debian tabanlı tüm sistemlerde aşağıdaki komut uygulanır.</p>
-<pre><code class="text">sudo apt update
+<pre><code class="language-text">sudo apt update
 </code></pre>
-
 <p>Bu komut ile birlikte sisteminizde güncellenme ihtiyacı bulunan paket olup olmadığı gösterilmektedir. Fakat herhangi bir güncelleme işlemi yapmaz. İlgili paketleri güncellemek istediğinizde ise aşağıdaki komut uygulanır.</p>
-<pre><code class="text">sudo apt upgrade
+<pre><code class="language-text">sudo apt upgrade
 </code></pre>
-
 <p>Bu işlem tamamlandığında herhangi bir problem yoksa sisteminiz güncellenmiş olacaktır.</p>
 <h2 id="2-statik-ip-ayarlanmas">2. Statik IP ayarlanması</h2>
 <p>Pardus ve Ubuntu kurulumunda eğer Elle IP ayarı girmediyseniz varsayılan olarak sisteminizde DHCP varsa, ilgili sunucu tarafından size bir IP atanacaktır. Fakat bu IP adresi belirli kurallarla belirli zaman sonra değişebilir. Bu nedenle bunu sabit hale getirmek için sistem üzerinden sabit IP tanımlamanız gerekmektedir.</p>
 <h2 id="21-pardus-sunucu-uzerinde-statik-ip-verme">2.1. Pardus Sunucu üzerinde statik IP verme</h2>
 <p>Hem Pardus 17.x hem de Pardus 19.x sürümlerinde statik IP verme süreci aynıdır. Bu nedenle <strong>/etc/network/interfaces</strong> dosyası içerisine girilir. Bu dosya içerisinde aşağıdaki gibi bir satır bulunması gerekir. </p>
-<pre><code class="text">iface eth0 inet dhcp 
+<pre><code class="language-text">iface eth0 inet dhcp 
 </code></pre>
-
 <p>Bu ve benzeri yapıda anlatılan şey <strong>eth0</strong> ağ arabiriminde <strong>DHCP</strong> ile otomatik IP alınmasıdır. Dolayısıyla bu dosyadaki tek satırı yönetici yetkili bir hesap ile vim veya nano gibi bir araç ile açıp, aşağıdaki gibi değiştirmeniz gerekmektedir:</p>
-<pre><code class="text">iface eth0 inet static
+<pre><code class="language-text">iface eth0 inet static
       address 192.168.1.67
       netmask 255.255.255.0
       gateway 192.168.1.1
 </code></pre>
-
 <p>Bu kod dizisindeki IP adresi olarak belirtilen 192.168.1.67 IP'si yerine sizin daha önce aldığınız ip adresini yazabilirsiniz. Bunun için dosyayı düzenlemeye başlamadan "ip a" komutu ile DHCP'nin size verdiği IP adresini öğrenip onu yazabilirsiniz. Gateway ve DNS adresleri eklenmesi gerekiyorsa bu konuda daha detaylı içeriği internetteki detaylı kaynaklardan bulabilirsiniz.</p>
 <h2 id="22-ubuntu-sunucu-uzerinde-statik-ip-verme">2.2. Ubuntu Sunucu üzerinde statik IP verme</h2>
 <p>Ubuntu, 18.04 sürümünden sonra klasik ağ yapısı yerine netplan sistemine geçmiştir. İlk olarak ağ arabirimi ve mevcut IP'nin belirlenmesi için "ip a" komutunu uygulayarak eth0 veya ens0s3 gibi değer belirlenir.</p>
 <p>Bu adımdan sonra  <strong>/etc/netplan/01-netcfg.yaml</strong> dosyası içerisine girilir. Bu dosya içerisinde aşağıdaki gibi bir görüntü bulunmaktadır:</p>
-<pre><code class="text">network:
+<pre><code class="language-text">network:
   version: 2
   renderer: networkd
   ethernets:
     ens0s3:
       dhcp4: yes
 </code></pre>
-
 <p>Bu içerik, aşağıdaki gibi bir hale getirilir:</p>
-<pre><code class="text">network:
+<pre><code class="language-text">network:
   version: 2
   renderer: networkd
   ethernets:
@@ -240,11 +190,9 @@
       nameservers:
           addresses: [8.8.8.8]
 </code></pre>
-
 <p>Yaml dosyası olduğu için boşluklar önemlidir. Ve bu düzenleme yapıldıktan sonra aşağıdaki komut ile netplan uygulanmış olur:</p>
-<pre><code class="text">sudo netplan apply
+<pre><code class="language-text">sudo netplan apply
 </code></pre>
-
 <p>Böylelikle IP adresi alınmış olur. Daha detaylı bilgi için internette çok daha detaylı bilgilere erişebilirsiniz.</p>
               
             </div>
@@ -268,7 +216,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -278,7 +226,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -292,6 +240,11 @@
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
