@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Domain Eklentisi Genel - Liman Rehber</title>
+  <title>Kaptan ve Tayfa Servisi - Liman Rehber</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Domain Eklentisi Genel";
-    var mkdocs_page_input_path = "domain-genel.md";
+    var mkdocs_page_name = "Kaptan ve Tayfa Servisi";
+    var mkdocs_page_input_path = "kaptan-tayfa-genel.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -88,14 +88,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Domain Eklentisi</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Domain Eklentisi Genel</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#eklentinin-amac">Eklentinin Amacı</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#eklentinin-kullanlacag-sunucular">Eklentinin Kullanılacağı Sunucular</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../domain-genel/">Domain Eklentisi Genel</a>
                     </li>
                     <li class="toctree-l1"><a class="" href="../domain-samba.md">Sunucular-SAMBA DC</a>
                     </li>
@@ -116,8 +110,14 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Kaptan ve Tayfa</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../kaptan-tayfa-genel/">Kaptan ve Tayfa Servisi</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Kaptan ve Tayfa Servisi</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#kaptan-servisi-hakknda">Kaptan Servisi Hakkında</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tayfa-servisi-hakknda">Tayfa Servisi Hakkında</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="" href="../kaptan-kurulum.md">Kaptan Kurulumu</a>
                     </li>
@@ -154,11 +154,11 @@
     
       
         
-          <li>Domain Eklentisi &raquo;</li>
+          <li>Kaptan ve Tayfa &raquo;</li>
         
       
     
-    <li>Domain Eklentisi Genel</li>
+    <li>Kaptan ve Tayfa Servisi</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -169,11 +169,30 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="domain-eklentisi-genel">Domain Eklentisi Genel</h1>
-<h2 id="eklentinin-amac">Eklentinin Amacı</h2>
-<p>Liman MYS üzerindeki Domain eklentisi genellikle LDAP kaynakları içerisindeki Kullanıcı, Grup, Bilgisayar ve hiyerarşi üzerindeki Politikaları yönetmek için kullanılır. </p>
-<h2 id="eklentinin-kullanlacag-sunucular">Eklentinin Kullanılacağı Sunucular</h2>
-<p>Domain eklentisi LDAP kaynağı sunucusu üzerinde kullanılmalıdır. Bu konuda mevcut durumda desteklenen Microsoft Aktif Dizin ve SAMBA Etki Alanı Denetçisine resmi olarak destek verilmektedir. İleriki sürümlerde FreeIPA üzerinde de temel özelliklerin kontrol edilmesi sağlanacaktır.</p>
+                <h1 id="kaptan-ve-tayfa-servisleri">Kaptan ve Tayfa Servisleri</h1>
+<h2 id="kaptan-servisi-hakknda">Kaptan Servisi Hakkında</h2>
+<p>Kurumsal sistemler için gerekli Liman MYS bileşenidir. Sunucu servisi olarak kurulmaktadır. İstemcilere kurulan <a href="../tayfa-servisi/tayfa-servisi-hakkinda.md">Tayfa</a> ile kendi özel protoklü üzerinden haberleşmektedir.</p>
+<p><strong>Kaptan'ın görevleri:</strong></p>
+<ul>
+<li>MS Aktif Dizin veya Açık Kaynak Kodlu SAMBA DC gibi domain kontrolcüleri üzerindeki organizasyon birimlerine göre kullanıcı ve bilgisayar politikalarını listeleme</li>
+<li>İstemci cihazlardan Tayfa servisi yardımı ile politika loglarını toplama.</li>
+<li>İstemci cihazlardan Tayfa servisi yardımı ile envanter bilgilerini çekme.</li>
+<li>Tek bir merkezden tayfalar üzerindeki logları yönetebilme ve yönlendirebilmeyi sağlar.</li>
+<li>Tayfa servislerinin güncelliğini kontrol eder.</li>
+<li>Tayfa servislerinin lisans yönetimini sağlar.</li>
+</ul>
+<h2 id="tayfa-servisi-hakknda">Tayfa Servisi Hakkında</h2>
+<p>Politika ile yönetilmek istenen GNU/Linux istemcilerde kurulu servistir. İstemci üzerinde, MS Aktif Dizin veya açık kaynak kodlu SAMBA üzerinde tanımlı kullanıcı ve bilgisayar politikalarını indirip uygulamakla yükümlüdür.</p>
+<p>Tayfa servisi; bilgisayar politikalarını ilk olarak makine başlarken, kullanıcı politikalarını ise kullanıcı giriş yaparken çekmektedir. Daha sonrasında varsayılan olarak politika tipine göre farklı zaman aralıklarında güncellemeleri kontrol etmektedir. Fakat tayfa politikasının güncellenmesi ile birlikte bu süre değiştirilebilmektedir.</p>
+<p><strong>Tayfa’nın görevleri:</strong> </p>
+<ul>
+<li>Kullanıcılar ve Bilgisayarlar için organizasyon birimine uygun politikaları kontrol etme ve değişiklik varsa veya uygulamada problem varsa güncelleme yapma.</li>
+<li>Politikaların doğruluğunu kontrol etme.</li>
+<li>Politikaları uygulama.</li>
+<li>Politika sonuçlarını kontrol edip logları kaptan sunucusuna gönderme.</li>
+<li>Bilgisayar ile ilgili envanter kayıtlarını değişim durumunda kaptan sunucusuna gönderme.</li>
+<li>Tayfa üzerinde yeni politika geliştirildi ise kaptan üzerinden sorgulama ve indirme.</li>
+</ul>
               
             </div>
           </div>
@@ -181,10 +200,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../kaptan-tayfa-genel/" class="btn btn-neutral float-right" title="Kaptan ve Tayfa Servisi">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../liman-kullanici-ayar/" class="btn btn-neutral" title="Liman Kullanıcı Ayarları"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../domain-genel/" class="btn btn-neutral" title="Domain Eklentisi Genel"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -210,10 +227,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../liman-kullanici-ayar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../domain-genel/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../kaptan-tayfa-genel/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
