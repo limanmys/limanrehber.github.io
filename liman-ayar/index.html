@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Sunucu ekleme ve kaldırma - Liman Rehber</title>
+  <title>Liman Kurulum Sonrası ayarlar - Liman Rehber</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Sunucu ekleme ve kald\u0131rma";
-    var mkdocs_page_input_path = "liman-sunucuekle.md";
+    var mkdocs_page_name = "Liman Kurulum Sonras\u0131 ayarlar";
+    var mkdocs_page_input_path = "liman-ayar.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -61,25 +61,23 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Liman Kurulumu</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../liman-kurulum/">Liman Kurulum Yöntemleri</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-guncelle/">Liman Güncelleme</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../liman-ayar/">Liman Kurulum Sonrası ayarlar</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Liman Kurulum Sonrası ayarlar</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#4-admda-yonetici-kullancs-ekleme">4 adımda yönetici kullanıcısı ekleme</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-eklentikurulumu/">Liman'a eklenti kurulumu ve güncellemesi</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Liman-Sunucu Yönetimi</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Sunucu ekleme ve kaldırma</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-ssh-protokolu-ile-yonetilen-sunucu-ekleme">1. SSH protokolü ile yönetilen sunucu ekleme</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-ekli-olan-bir-sunucuyu-kaldrma">2. Ekli olan bir sunucuyu kaldırma</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuekle/">Sunucu ekleme ve kaldırma</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../liman-sunucuduzenle/">Sunucu ayarlarının düzenlenmesi</a>
                     </li>
@@ -154,11 +152,11 @@
     
       
         
-          <li>Liman-Sunucu Yönetimi &raquo;</li>
+          <li>Liman Kurulumu &raquo;</li>
         
       
     
-    <li>Sunucu ekleme ve kaldırma</li>
+    <li>Liman Kurulum Sonrası ayarlar</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -169,37 +167,16 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sunucu-ekleme-ve-kaldrma">Sunucu Ekleme ve Kaldırma</h1>
-<p>Liman MYS üzerinde Sunucu ekleme yetkisine sahip bir kullanıcı iseniz Liman MYS'nin yönetebileceği bir sunucu ekleyebilirsiniz. </p>
-<h2 id="1-ssh-protokolu-ile-yonetilen-sunucu-ekleme">1. SSH protokolü ile yönetilen sunucu ekleme</h2>
-<p>SSH protokolü ile yönetmek istediğiniz sunucuyu ekleyebilmek için aşağıdaki adımları uygulamanız gerekmektedir.</p>
-<ol>
-<li>Sunucular sayfasında Sunucu Ekle butonuna tıklayınız.</li>
-</ol>
-<p><img alt="Sunucular Ana Sayfas&#x131;" src="../gorseller/sunucuekle1.png" /></p>
-<ol>
-<li>Açılan ekranda ulaşacağınız Sunucunun IP adresi veya DNS kaydındaki adresini yazmanız gerekmekte. Ve eğer SSH protokolünü 22 portundan kullanıyorsanız 22 yazmanız gerekmektedir. Fakat güvenlik endişesiyle 22 portunu değiştirmişseniz bu kısmı da düzenlemeniz gerekmektedir. "Bağlantıyı Kontrol Et" diyerek ilgili porttan ağ erişimi bulunmakta ise bir sonraki adıma geçebilirsiniz.</li>
-</ol>
-<p><img alt="Sunucu Ekleme Ba&#x11F;lant&#x131; Bilgileri" src="../gorseller/sunucuekle2.png" /></p>
-<ol>
-<li>Sunucunuza Liman MYS üzerinde hangi ismi vermek istediğiniz ve herhangi bir şehir altında gözükmesini istiyorsanız o şehri yazabilirsiniz. Ve son olarak da sunucunuzun işletim sistemini Microsoft Windows veya GNU/Linux olarak seçmeniz beklenmektedir. "Ayarları Onayla" diyerek bir sonraki adıma geçebilirsiniz.</li>
-</ol>
-<p><img alt="Sunucu Ekleme Genel Ayarlar" src="../gorseller/sunucuekle3.png" /></p>
-<ol>
-<li>Bu adımda giriş yapabilmeniz için gerekli bilgileri yazmanız gerekmektedir. Anahtar türü olarak SSH ve SSH anahtarını seçebilirsiniz. Eğer anahtar ile giriş yapmak istiyorsanız SSH anahtarını seçebilirsiniz. Rehber dahilinde kullanıcı adı ve parola girecek şekilde giriş yapmayı seçiyoruz ve "Ayarları Onayla" diyerek ilerliyoruz.</li>
-</ol>
-<p><img alt="Sunucu Ekleme Anahtar" src="../gorseller/sunucuekle4.png" /></p>
-<ol>
-<li>Bu kısma kadar düzgün şekilde gelebildiyseniz özet bilgilerine bakarak "Sunucuyu Ekle" diyerek onaylayabilirsiniz.</li>
-</ol>
-<p><img alt="Sunucu Ekleme &#xD6;zet" src="../gorseller/sunucuekle5.png" /></p>
-<ol>
-<li>Sunucu eklendikten sonra Sunucular sayfası içerisinden giriş yaptıktan sonra aşağıdaki gibi sunucunuzun görülmesi gerekmektedir.</li>
-</ol>
-<p><img alt="Sunucu &#x130;&#xE7;eri&#x11F;i" src="../gorseller/sunucuekle6.png" /></p>
-<h2 id="2-ekli-olan-bir-sunucuyu-kaldrma">2. Ekli olan bir sunucuyu kaldırma</h2>
-<p>Sunucular sayfasında gördüğünüz bir sunucuyu Liman MYS ile yönetmek istemiyorsanız, Sunucuya sağ tıklayıp "Sil" diyerek kaldırabilirsiniz.</p>
-<p><img alt="Sunucuyu Silme" src="../gorseller/sunucuekle7.png" /></p>
+                <h1 id="kurulum-sonras-ayarlar">Kurulum Sonrası Ayarlar</h1>
+<h2 id="4-admda-yonetici-kullancs-ekleme">4 adımda yönetici kullanıcısı ekleme</h2>
+<p>Liman Kurulumunda Administrator isimli bir kullanıcı oluşturulmaktadır. Fakat bu kullanıcıyı kimlerin kullandığı bilinemeyeceği için güvenlik anlamında bir eksiklik oluşturmaktadır. Dolayısıyla Liman MYS'yi kullanacak her sistem yöneticisi kendi kullanıcı adı ile giriş yapması gerekir ki yaptıkları işlemler sonucunda sorumlu olabilsin.</p>
+<p>+1. Sistem Ayarları bölümünden, Kullanıcı Ayarları sekmesinde "Kullanıcı Ekle" butonuna tıklanır. Yetki verme seviyesine göre Tip olarak Kullanıcı veya Yönetici seçilerek bir isim ve mail adresi belirlenerek "Ekle" butonuna tıklanır.</p>
+<p><img alt="" src="../gorseller/kullaniciekle1.png" /></p>
+<p>+2. Bu adımdan sonra karmaşık bir parola ile kullanıcı oluşturulur. "<strong>b&amp;9etu%NjA</strong>"</p>
+<p><img alt="" src="../gorseller/kullaniciekle2.png" /></p>
+<p>+3. Bu şekilde kullanıcı eklendikten sonra mail adresi ve Parola ile kullanıcı Liman MYS üzerine giriş yapabilmektedir. İlk defa giriş yaptıktan sonra size şifre değiştirme arayüzü çıkacaktır.</p>
+<p><img alt="" src="../gorseller/kullaniciekle3.png" /></p>
+<p>+4. Bu adımdan sonra tekrar giriş yaparak Liman MYS arayüzüne kendi kullanıcı hesabınız ile giriş yapabilirsiniz.</p>
               
             </div>
           </div>
@@ -207,10 +184,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../liman-sunucuduzenle/" class="btn btn-neutral float-right" title="Sunucu ayarlarının düzenlenmesi">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../liman-eklentikurulumu/" class="btn btn-neutral float-right" title="Liman'a eklenti kurulumu ve güncellemesi">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../liman-eklentikurulumu/" class="btn btn-neutral" title="Liman'a eklenti kurulumu ve güncellemesi"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../liman-guncelle/" class="btn btn-neutral" title="Liman Güncelleme"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -236,10 +213,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../liman-eklentikurulumu/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../liman-guncelle/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../liman-sunucuduzenle/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../liman-eklentikurulumu/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
