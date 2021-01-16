@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Liman Kurulum Yöntemleri - Liman Rehber</title>
+  <title>Liman Kurulum - Liman Rehber</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Liman Kurulum Y\u00f6ntemleri";
+    var mkdocs_page_name = "Liman Kurulum";
     var mkdocs_page_input_path = "liman-kurulum.md";
     var mkdocs_page_url = null;
   </script>
@@ -62,23 +62,25 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Liman Kurulumu</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Liman Kurulum Yöntemleri</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Liman Kurulum</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-kurulum-oncesi-admlar">1. Kurulum Öncesi Adımlar</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#11-gerekli-php-surumu">1.1. Gerekli PHP sürümü</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#111-ubuntu-2004-pardus-19x-ve-debian-10x">1.1.1. Ubuntu 20.04, Pardus 19.x ve Debian 10.x</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#111-ubuntu-2004-pardus-19x-ve-debian-10x">1.1.1. Ubuntu 20.04, Pardus 19.x ve Debian 10.x</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#112-ubuntu-1804">1.1.2. Ubuntu 18.04</a>
+    <li class="toctree-l4"><a class="reference internal" href="#112-ubuntu-1804">1.1.2. Ubuntu 18.04</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#12-gerekli-postgresql-surumu">1.2. Gerekli PostgreSQL sürümü</a>
+    <li class="toctree-l3"><a class="reference internal" href="#12-gerekli-postgresql-surumu">1.2. Gerekli PostgreSQL sürümü</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#121-ubuntu-ve-debian">1.2.1. Ubuntu ve Debian</a>
+    <li class="toctree-l4"><a class="reference internal" href="#121-ubuntu-ve-debian">1.2.1. Ubuntu ve Debian</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#122-pardus-19x">1.2.2. Pardus 19.x</a>
+    <li class="toctree-l4"><a class="reference internal" href="#122-pardus-19x">1.2.2. Pardus 19.x</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -178,7 +180,7 @@
         
       
     
-    <li>Liman Kurulum Yöntemleri</li>
+    <li>Liman Kurulum</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -195,24 +197,24 @@
 <h2 id="1-kurulum-oncesi-admlar">1. Kurulum Öncesi Adımlar</h2>
 <h3 id="11-gerekli-php-surumu">1.1. Gerekli PHP sürümü</h3>
 <p>Liman MYS altyapı olarak çeşitli ihtiyaçlardan dolayı PHP 7.3 sürümüne ihtiyaç duyar. Bazı dağıtımların resmi sitesinde PHP 7.3 paketleri bulunmamaktadır. Bu nedenle gerekli işletim sistemleri için aşağıdaki depodan güncel paketlerin yüklenmesi gerekmektedir.</p>
-<h3 id="111-ubuntu-2004-pardus-19x-ve-debian-10x">1.1.1. Ubuntu 20.04, Pardus 19.x ve Debian 10.x</h3>
+<h4 id="111-ubuntu-2004-pardus-19x-ve-debian-10x">1.1.1. Ubuntu 20.04, Pardus 19.x ve Debian 10.x</h4>
 <p>Bu işletim sistemleri için PHP'nin 7.3 sürümü depoda olduğu için bu adımda bir şey yapmanıza gerek yoktur.</p>
-<h3 id="112-ubuntu-1804">1.1.2. Ubuntu 18.04</h3>
+<h4 id="112-ubuntu-1804">1.1.2. Ubuntu 18.04</h4>
 <p>Ubuntu 18.04 resmi depolarında PHP 7.3 paketleri olmadığı için aşağıdaki depo eklenmesi gerekmektedir:</p>
 <pre><code class="language-bash">sudo apt install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install php-sqlite3 php-curl
 </code></pre>
-<h2 id="12-gerekli-postgresql-surumu">1.2. Gerekli PostgreSQL sürümü</h2>
+<h3 id="12-gerekli-postgresql-surumu">1.2. Gerekli PostgreSQL sürümü</h3>
 <p>Liman MYS altyapı olarak çeşitli kurumsal ihtiyaçlardan dolayı PostgreSQL 13.x sürümüne ihtiyaç duyar. Bazı dağıtımların resmi sitesinde PostgreSQL 13.x paketleri bulunmamaktadır. Bu nedenle gerekli işletim sistemleri için aşağıdaki depodan güncel paketlerin yüklenmesi gerekmektedir.</p>
-<h3 id="121-ubuntu-ve-debian">1.2.1. Ubuntu ve Debian</h3>
+<h4 id="121-ubuntu-ve-debian">1.2.1. Ubuntu ve Debian</h4>
 <p>Ubuntu resmi depolarında PostgreSQL güncel 13.x paketleri olmadığı için aşağıdaki depo eklenmesi gerekmektedir:</p>
 <pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt update
 </code></pre>
-<h3 id="122-pardus-19x">1.2.2. Pardus 19.x</h3>
+<h4 id="122-pardus-19x">1.2.2. Pardus 19.x</h4>
 <p>Pardus resmi depolarında PostgreSQL güncel 13.x paketleri olmadığı için aşağıdaki depo eklenmesi gerekmektedir:</p>
 <pre><code class="language-bash">sudo sh -c 'echo &quot;deb http://apt.postgresql.org/pub/repos/apt buster-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
